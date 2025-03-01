@@ -333,8 +333,17 @@ function renderPricing() {
       )
       .join("");
 
+    // 🎯 Add Ribbon for Growth Plan
+    const ribbon =
+      plan.name === "Growth"
+        ? `<div class="absolute -top-3 -right-3 bg-indigo-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+          Most Popular
+        </div>`
+        : "";
+
     const planHTML = `
       <div class="relative rounded-2xl transition-transform duration-300 ${isHighlighted} p-8 xl:p-10 hover:scale-105">
+        ${ribbon} <!-- Insert ribbon here -->
         <h3 class="text-lg font-semibold">${plan.name}</h3>
         <div class="mt-2 flex items-center gap-x-4">
           <p class="text-4xl font-bold tracking-tight">${
