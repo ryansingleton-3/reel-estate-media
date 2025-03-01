@@ -133,21 +133,18 @@ function animateValue(id, start, end, duration) {
   let obj = document.getElementById(id);
   if (!obj) return;
 
-  // Set the default value in case animation fails
-  obj.textContent = `${end}%`;
-
   let startTime = null;
-
-  function step(timestamp) {
+  let frame = (timestamp) => {
     if (!startTime) startTime = timestamp;
     let progress = Math.min((timestamp - startTime) / duration, 1);
     obj.textContent = Math.floor(progress * (end - start) + start) + "%";
-    if (progress < 1) {
-      requestAnimationFrame(step);
-    }
-  }
 
-  requestAnimationFrame(step);
+    if (progress < 1) {
+      requestAnimationFrame(frame);
+    }
+  };
+
+  requestAnimationFrame(frame);
 }
 
 // Function to start counting when section is visible
@@ -156,15 +153,10 @@ function startCounting() {
     let obj = document.getElementById(stat.id);
     if (!obj) return;
 
-    // Check if function already ran
-    if (obj.textContent !== "0%") return;
+    if (obj.dataset.animated === "true") return; // Prevent re-animation
+    obj.dataset.animated = "true"; // Mark as animated
 
-    // Run animation if visible, otherwise set the value instantly
-    if (document.visibilityState === "visible") {
-      animateValue(stat.id, 0, stat.number, 2000);
-    } else {
-      obj.textContent = `${stat.number}%`; // Just set the final value
-    }
+    animateValue(stat.id, 0, stat.number, 2000);
   });
 }
 
@@ -181,10 +173,22 @@ let observer = new IntersectionObserver(
 
 // Run the functions after the DOM loads
 document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
-    populateStats();
-    observer.observe(document.querySelector("#stats"));
-  }, 500); // Small delay to ensure visibility
+  populateStats();
+
+  let statsSection = document.querySelector("#stats");
+  let observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startCounting();
+          observer.disconnect(); // Only trigger once
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  if (statsSection) observer.observe(statsSection);
 });
 
 // Array of feature data
