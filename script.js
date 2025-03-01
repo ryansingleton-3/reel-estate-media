@@ -1,7 +1,7 @@
 // Function to handle fade-in and slide-up effect
 function handleScrollAnimations() {
   const elements = document.querySelectorAll(".fade-in"); // Select elements with the class
-  
+
   elements.forEach((el) => {
     const rect = el.getBoundingClientRect();
     const isVisible = rect.top < window.innerHeight * 0.85; // 50% in view
@@ -117,8 +117,9 @@ function populateStats() {
     const statElement = document.createElement("div");
     statElement.classList.add("flex", "flex-col", "text-left");
 
+    // Default value set in HTML so it’s never 0%
     statElement.innerHTML = `
-      <dd class="text-3xl font-bold text-[#4F46E5] sm:text-4xl sm:tracking-tight" id="${stat.id}">0%</dd>
+      <dd class="text-3xl font-bold text-[#4F46E5] sm:text-4xl sm:tracking-tight" id="${stat.id}">${stat.number}%</dd>
       <dt class="text-lg font-medium text-gray-500">${stat.blurb}</dt>
       <p class="mt-1 text-gray-600 text-sm">${stat.description}</p>
     `;
@@ -130,6 +131,11 @@ function populateStats() {
 // Function to animate number counting
 function animateValue(id, start, end, duration) {
   let obj = document.getElementById(id);
+  if (!obj) return;
+
+  // Set the default value in case animation fails
+  obj.textContent = `${end}%`;
+
   let startTime = null;
 
   function step(timestamp) {
@@ -146,7 +152,20 @@ function animateValue(id, start, end, duration) {
 
 // Function to start counting when section is visible
 function startCounting() {
-  statsData.forEach((stat) => animateValue(stat.id, 0, stat.number, 2000));
+  statsData.forEach((stat) => {
+    let obj = document.getElementById(stat.id);
+    if (!obj) return;
+
+    // Check if function already ran
+    if (obj.textContent !== "0%") return;
+
+    // Run animation if visible, otherwise set the value instantly
+    if (document.visibilityState === "visible") {
+      animateValue(stat.id, 0, stat.number, 2000);
+    } else {
+      obj.textContent = `${stat.number}%`; // Just set the final value
+    }
+  });
 }
 
 // Observer to trigger counting when stats section enters the viewport
