@@ -157,13 +157,15 @@ let observer = new IntersectionObserver(
       observer.disconnect();
     }
   },
-  { threshold: 0.75 }
+  { threshold: 0.5 }
 );
 
 // Run the functions after the DOM loads
 document.addEventListener("DOMContentLoaded", () => {
-  populateStats();
-  observer.observe(document.querySelector("#stats"));
+  setTimeout(() => {
+    populateStats();
+    observer.observe(document.querySelector("#stats"));
+  }, 500); // Small delay to ensure visibility
 });
 
 // Array of feature data
