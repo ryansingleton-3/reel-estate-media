@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reel Estate Media</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-white">
+      <!-- Header -->
+      <header class="absolute inset-x-0 top-0 z-50 text-white">
+        <nav
+          class="flex items-center justify-between p-6 lg:px-8"
+          aria-label="Global"
+        >
+          <div class="flex lg:flex-1">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">Reel Estate Media</span>
+              <img class="h-8 w-auto" src="/Assets/Logo.jpg" alt="" />
+            </a>
+          </div>
+          <div class="flex lg:hidden">
+            <button
+              type="button"
+              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="size-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="hidden lg:flex lg:gap-x-12">
+            <a href="#features" class="text-sm/6 font-semibold text-white"
+              >Features</a
+            >
+            <a href="#pricing" class="text-sm/6 font-semibold text-white"
+              >Pricing</a
+            >
+            <a href="#about" class="text-sm/6 font-semibold text-white"
+              >Company</a
+            >
+          </div>
+          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+            <!-- <a href="#" class="text-sm/6 font-semibold text-white"
+              >Log in <span aria-hidden="true">&rarr;</span></a
+            > -->
+          </div>
+        </nav>
+        <!-- Mobile menu, show/hide based on menu open state. -->
+        <!-- Mobile Menu -->
+        <div
+          id="mobile-menu"
+          class="lg:hidden hidden fixed inset-0 z-50 bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        >
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">Reel Estate Media</span>
+              <img
+                class="h-8 w-auto"
+                src="/Assets/Logo.jpg"
+                alt="Company Logo"
+              />
+            </a>
+            <!-- Close button -->
+            <button
+              id="close-menu"
+              type="button"
+              class="-m-2.5 rounded-md p-2.5 text-gray-700"
+            >
+              <span class="sr-only">Close menu</span>
+              <svg
+                class="size-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
+                  >Product</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
+                  >Features</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
+                  >Marketplace</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
+                  >Company</a
+                >
+              </div>
+              <div class="py-6"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="isolate">
+        <!-- Hero section -->
+        <div class="relative w-full h-screen overflow-hidden">
+          <!-- Background Video -->
+          <video
+            autoplay
+            loop
+            muted
+            playsinline
+            class="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/Assets/HeroLarge.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          <!-- Overlay (Dark Background for Better Readability) -->
+          <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+          <!-- Text and Button Overlay -->
+          <div
+            class="relative z-10 flex flex-col items-center justify-center h-full text-center px-6"
+          >
+            <h1 class="text-5xl font-bold text-white sm:text-7xl">
+              Elevate Your Listings with Stunning Video
+            </h1>
+            <p class="mt-4 text-lg text-white sm:text-xl max-w-2xl">
+              Engage buyers, showcase properties, and sell faster with
+              high-quality real estate videos.
+            </p>
+            <a
+              href="#pricing"
+              class="mt-6 bg-indigo-600 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-indigo-500 transition"
+            >
+              Get Your First Video
+            </a>
+          </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <section
+          id="stats"
+          class="relative bg-white fade-in opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+        >
+          >
+          <div
+            class="relative mx-auto max-w-7xl px-6 py-8 sm:py-12 lg:py-16 flex flex-col-reverse lg:flex-row items-center"
+          >
+            <!-- Stats Content Section (Left Side) -->
+            <div class="w-full lg:w-1/2 lg:pr-12">
+              <h2
+                class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-left w-full"
+              >
+                Your Competition is Using Video. Are You?
+              </h2>
+              <!-- <p class="mt-4 text-lg text-gray-500">
+                Real estate listings with video attract more buyers and sell
+                faster.
+              </p> -->
+
+              <!-- Stats Container (Two Columns) -->
+              <div class="mt-6">
+                <dl
+                  id="stats-container"
+                  class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 text-left"
+                ></dl>
+              </div>
+            </div>
+
+            <!-- Image Section (Right Side) -->
+            <div class="w-full lg:w-1/2 flex justify-center mb-6 sm:mb-12">
+              <img
+                class="w-full max-w-md h-auto object-cover rounded-lg"
+                src="/Assets/Messaging.gif"
+                alt="Support team"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- about Section -->
+        <section
+          id="about"
+          class="relative bg-white py-16 fade-in opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+        >
+          <div
+            class="absolute inset-x-0 top-0 hidden h-1/2 bg-gray-50 lg:block"
+            aria-hidden="true"
+          ></div>
+          <div
+            class="mx-auto max-w-7xl bg-indigo-600 lg:bg-transparent lg:px-8"
+          >
+            <div class="lg:grid lg:grid-cols-12">
+              <!-- Image Section -->
+              <div
+                class="relative z-10 lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:bg-transparent lg:py-16"
+              >
+                <div
+                  class="absolute inset-x-0 h-1/2 bg-gray-50 lg:hidden"
+                  aria-hidden="true"
+                ></div>
+                <div
+                  class="mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-none lg:p-0"
+                >
+                  <img
+                    class="relative aspect-[10/6] w-full rounded-3xl object-cover shadow-2xl sm:aspect-[2/1] lg:aspect-square"
+                    src="/Assets/Ryan_Headshot_real_square.png"
+                    alt="about"
+                  />
+                </div>
+              </div>
+
+              <!-- Content Section -->
+              <div
+                class="relative bg-[#4F46E5] lg:col-span-10 lg:col-start-3 lg:row-start-1 lg:grid lg:grid-cols-10 lg:items-center lg:rounded-3xl"
+              >
+                <div
+                  class="absolute inset-0 hidden overflow-hidden rounded-3xl lg:block"
+                  aria-hidden="true"
+                >
+                  <svg
+                    class="absolute bottom-full left-full -translate-x-2/3 translate-y-1/3 transform xl:bottom-auto xl:top-0 xl:translate-y-0"
+                    width="404"
+                    height="384"
+                    fill="none"
+                    viewBox="0 0 404 384"
+                    aria-hidden="true"
+                  >
+                    <defs>
+                      <pattern
+                        id="pattern-bg"
+                        x="0"
+                        y="0"
+                        width="20"
+                        height="20"
+                        patternUnits="userSpaceOnUse"
+                      >
+                        <rect
+                          x="0"
+                          y="0"
+                          width="4"
+                          height="4"
+                          class="text-indigo-500"
+                          fill="currentColor"
+                        />
+                      </pattern>
+                    </defs>
+                    <rect width="404" height="384" fill="url(#pattern-bg)" />
+                  </svg>
+                  <svg
+                    class="absolute top-full -translate-x-1/3 -translate-y-1/3 transform xl:-translate-y-1/2"
+                    width="404"
+                    height="384"
+                    fill="none"
+                    viewBox="0 0 404 384"
+                    aria-hidden="true"
+                  >
+                    <rect width="404" height="384" fill="url(#pattern-bg)" />
+                  </svg>
+                </div>
+
+                <!-- About Us Content -->
+                <div
+                  class="relative mx-auto max-w-md space-y-6 px-6 py-12 sm:max-w-3xl sm:py-16 lg:col-span-6 lg:col-start-4 lg:max-w-none lg:p-0"
+                >
+                  <h2 class="text-3xl font-bold tracking-tight text-white">
+                    Reel Estate Media
+                  </h2>
+                  <p class="text-lg text-white">
+                    We create high-quality real estate videos that make your
+                    listings stand out and attract more buyers.
+                  </p>
+                  <p class="text-lg text-white">
+                    With professional videography, smooth edits, and engaging
+                    storytelling, we help agents showcase properties in the best
+                    light—driving more views, offers, and sales.
+                  </p>
+                  <p class="text-lg text-white">
+                    Our streamlined process ensures fast turnaround times and
+                    MLS & social media-ready videos that maximize exposure.
+                    Whether you need a single listing video or ongoing content,
+                    we make it easy to market your properties like a pro.
+                  </p>
+                  <a
+                    href="#features"
+                    class="block w-full rounded-md border border-transparent bg-white px-5 py-3 text-center text-base font-medium text-indigo-700 shadow-md hover:bg-gray-50 sm:inline-block sm:w-auto"
+                  >
+                    Learn More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Logo cloud
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div
+            class="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5"
+          >
+            <img
+              class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+              src="https://tailwindui.com/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg"
+              alt="Transistor"
+              width="158"
+              height="48"
+            />
+            <img
+              class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+              src="https://tailwindui.com/plus-assets/img/logos/158x48/reform-logo-gray-900.svg"
+              alt="Reform"
+              width="158"
+              height="48"
+            />
+            <img
+              class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+              src="https://tailwindui.com/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg"
+              alt="Tuple"
+              width="158"
+              height="48"
+            />
+            <img
+              class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
+              src="https://tailwindui.com/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg"
+              alt="SavvyCal"
+              width="158"
+              height="48"
+            />
+            <img
+              class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
+              src="https://tailwindui.com/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg"
+              alt="Statamic"
+              width="158"
+              height="48"
+            />
+          </div>
+          <div class="mt-16 flex justify-center">
+            <p
+              class="relative rounded-full px-4 py-1.5 text-sm/6 text-gray-600 ring-1 ring-inset ring-gray-900/10 hover:ring-gray-900/20"
+            >
+              <span class="hidden md:inline"
+                >Transistor saves up to $40,000 per year, per employee by
+                working with us.</span
+              >
+              <a href="#" class="font-semibold text-indigo-600"
+                ><span class="absolute inset-0" aria-hidden="true"></span> Read
+                our case study <span aria-hidden="true">&rarr;</span></a
+              >
+            </p>
+          </div>
+        </div> -->
+
+        <!-- Features Section -->
+        <section
+          id="features"
+          class="bg-white py-24 sm:py-32 fade-in opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+        >
+          <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div
+              class="mx-auto grid max-w-2xl grid-cols-1 gap-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-5"
+            >
+              <!-- Section Heading -->
+              <h2
+                class="col-span-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
+              >
+                Elevate Your Property Listings
+              </h2>
+
+              <!-- Features List -->
+              <dl
+                id="features-container"
+                class="col-span-3 grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-3"
+              >
+                <!-- Features will be inserted here dynamically by JavaScript -->
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section
+          id="pricing"
+          class="bg-gradient-to-b from-[#4F46E5] to-white fade-in opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+        >
+          >
+          <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="relative z-10 text-center">
+              <h2
+                class="text-5xl font-semibold tracking-tight text-white sm:text-6xl"
+              >
+                Pricing that grows with you
+              </h2>
+              <p
+                class="mx-auto mt-6 max-w-2xl text-lg font-medium text-white sm:text-xl/8"
+              >
+                Choose a plan that fits your needs and helps you create
+                high-quality real estate videos.
+              </p>
+            </div>
+
+            <!-- Pricing Grid -->
+            <div
+              id="pricing-container"
+              class="relative mx-auto mt-16 grid max-w-md grid-cols-1 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+            >
+              <!-- Plans will be inserted here dynamically -->
+            </div>
+          </div>
+        </section>
+
+        <script src="/script.js"></script>
+
+        <!-- Testimonial section -->
+        <div
+          class="mx-auto mt-32 max-w-7xl sm:mt-56 sm:px-6 lg:px-8 fade-in opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+        >
+          <div
+            class="relative overflow-hidden bg-gray-900 px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20"
+          >
+            <img
+              class="absolute inset-0 size-full object-cover brightness-150 saturate-0"
+              src="/Assets/2h-media-DSir3dreZVc-unsplash.jpg"
+              alt=""
+            />
+            <div
+              class="absolute inset-0 bg-[#4F46E5]/90 mix-blend-multiply"
+            ></div>
+
+            <!-- Adjusted Gradient Blur Effect -->
+            <div
+              class="absolute -left-80 -top-56 transform-gpu blur-3xl"
+              aria-hidden="true"
+            >
+              <div
+                class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-[#4F46E5] to-[#9089FC] opacity-[0.45]"
+                style="
+                  clip-path: polygon(
+                    74.1% 44.1%,
+                    100% 61.6%,
+                    97.5% 26.9%,
+                    85.5% 0.1%,
+                    80.7% 2%,
+                    72.5% 32.5%,
+                    60.2% 62.4%,
+                    52.4% 68.1%,
+                    47.5% 58.3%,
+                    45.2% 34.5%,
+                    27.5% 76.7%,
+                    0.1% 64.9%,
+                    17.9% 100%,
+                    27.6% 76.8%,
+                    76.1% 97.7%,
+                    74.1% 44.1%
+                  );
+                "
+              ></div>
+            </div>
+
+            <div
+              class="hidden md:absolute md:bottom-16 md:left-[50rem] md:block md:transform-gpu md:blur-3xl"
+              aria-hidden="true"
+            >
+              <div
+                class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-[#4F46E5] to-[#9089FC] opacity-25"
+                style="
+                  clip-path: polygon(
+                    74.1% 44.1%,
+                    100% 61.6%,
+                    97.5% 26.9%,
+                    85.5% 0.1%,
+                    80.7% 2%,
+                    72.5% 32.5%,
+                    60.2% 62.4%,
+                    52.4% 68.1%,
+                    47.5% 58.3%,
+                    45.2% 34.5%,
+                    27.5% 76.7%,
+                    0.1% 64.9%,
+                    17.9% 100%,
+                    27.6% 76.8%,
+                    76.1% 97.7%,
+                    74.1% 44.1%
+                  );
+                "
+              ></div>
+            </div>
+
+            <div class="relative mx-auto max-w-2xl lg:mx-0">
+              <figure>
+                <blockquote
+                  class="mt-6 text-lg font-semibold text-white sm:text-xl/8"
+                >
+                  <p>
+                    “Reel Estate Media transformed the way I showcase
+                    properties. The videos are stunning, and I’ve seen a huge
+                    increase in engagement!”
+                  </p>
+                </blockquote>
+                <figcaption class="mt-6 text-base text-white">
+                  <div class="font-semibold">Alex Johnson</div>
+                  <div class="mt-1">Real Estate Agent</div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section
+          id="faq-section"
+          class="relative bg-white fade-in opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+        >
+          <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
+            <div class="mx-auto max-w-4xl">
+              <h2
+                class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
+              >
+                Frequently Asked Questions
+              </h2>
+              <dl id="faq-container" class="mt-16 divide-y divide-gray-900/10">
+                <!-- FAQ items will be dynamically inserted here by JavaScript -->
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div
+          class="relative -z-10 mt-32 px-6 lg:px-8 fade-in opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+        >
+          <!-- Gradient Background -->
+          <div
+            class="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 transform-gpu justify-center overflow-hidden blur-3xl sm:bottom-0 sm:right-[calc(50%-6rem)] sm:top-auto sm:translate-y-0 sm:transform-gpu sm:justify-end"
+            aria-hidden="true"
+          >
+            <div
+              class="aspect-[1108/632] w-[69.25rem] flex-none bg-gradient-to-r from-[#4F46E5] to-[#9089FC] opacity-25"
+              style="
+                clip-path: polygon(
+                  73.6% 48.6%,
+                  91.7% 88.5%,
+                  100% 53.9%,
+                  97.4% 18.1%,
+                  92.5% 15.4%,
+                  75.7% 36.3%,
+                  55.3% 52.8%,
+                  46.5% 50.9%,
+                  45% 37.4%,
+                  50.3% 13.1%,
+                  21.3% 36.2%,
+                  0.1% 0.1%,
+                  5.4% 49.1%,
+                  21.4% 36.4%,
+                  58.9% 100%,
+                  73.6% 48.6%
+                );
+              "
+            ></div>
+          </div>
+
+          <div class="mx-auto max-w-2xl text-center">
+            <h2
+              class="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
+            >
+              Get More Eyes on Your Listings
+            </h2>
+            <p
+              class="mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-gray-600"
+            >
+              Listings with professional video get more views, sell faster, and
+              close at higher prices. Let us help you showcase your properties
+              with cinematic, high-quality video that makes buyers take action.
+            </p>
+            <div class="mt-10 flex items-center justify-center gap-x-6">
+              <a
+                href="https://buy.stripe.com/aEU4ib7Xa0sk5gsdQR"
+                class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Book Your First Video
+              </a>
+              <a href="#pricing" class="text-sm/6 font-semibold text-gray-900">
+                See Pricing <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Additional Gradient for Styling -->
+          <div
+            class="absolute left-1/2 right-0 top-full -z-10 hidden -translate-y-1/2 transform-gpu overflow-hidden blur-3xl sm:block"
+            aria-hidden="true"
+          >
+            <div
+              class="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#4F46E5] to-[#9089fc] opacity-30"
+              style="
+                clip-path: polygon(
+                  74.1% 44.1%,
+                  100% 61.6%,
+                  97.5% 26.9%,
+                  85.5% 0.1%,
+                  80.7% 2%,
+                  72.5% 32.5%,
+                  60.2% 62.4%,
+                  52.4% 68.1%,
+                  47.5% 58.3%,
+                  45.2% 34.5%,
+                  27.5% 76.7%,
+                  0.1% 64.9%,
+                  17.9% 100%,
+                  27.6% 76.8%,
+                  76.1% 97.7%,
+                  74.1% 44.1%
+                );
+              "
+            ></div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div
+          class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8"
+        >
+          <!-- Footer Navigation -->
+          <nav
+            class="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6"
+            aria-label="Footer"
+          >
+            <a href="#about" class="hover:text-gray-900">About</a>
+            <a href="#pricing" class="hover:text-gray-900">Pricing</a>
+            <a href="#features" class="hover:text-gray-900">Features</a>
+            <a href="#faq-section" class="hover:text-gray-900">FAQ</a>
+          </nav>
+
+          <!-- Contact Information -->
+          <div class="mt-10 text-center text-sm/6">
+            <p class="text-lg font-semibold">Contact Us</p>
+            <p class="mt-1">
+              📞
+              <a href="tel:+1234567890" class="hover:text-gray-900"
+                >+1 (614) 747-2211</a
+              >
+            </p>
+            <p class="mt-1">
+              📧
+              <a
+                href="mailto:ryanbsingleton3@gmail.com"
+                class="hover:text-gray-900"
+                >ryanbsingleton3@gmail.com</a
+              >
+            </p>
+          </div>
+
+          <!-- Social Media Icons -->
+          <div class="mt-10 flex justify-center gap-x-10">
+            <a href="#" class="hover:text-gray-800">
+              <span class="sr-only">Facebook</span>
+              <svg
+                class="size-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <a href="#" class="hover:text-gray-800">
+              <span class="sr-only">Instagram</span>
+              <svg
+                class="size-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Copyright Text -->
+          <p class="mt-10 text-center text-sm/6">
+            &copy; 2025 Reel Estate Media, All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+    <script src="/script.js"></script>
+  </body>
+</html>
